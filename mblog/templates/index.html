@@ -6,9 +6,19 @@
 {% endblock %}
 {% block content %}
 {% for post in posts %}
-        <p style="font-family:微軟正黑體;font-size:14pt;font-weight:bold;">
-                <a href="/post/{{post.slug}}">{{post.title}}</a>
-        </p>
+        <div class='panel panel-default'>
+                <div class='panel-heading'>                     
+                        <p style="font-family:微軟正黑體;font-size:14pt;font-weight:bold;">
+                        <a href="/post/{{post.slug}}">{{post.title}}</a>
+                        </p>
+                </div>
+                <div class='panel-body' style='background-color:aqua'>
+                        <p> {{post.body | truncatechars:40}}</p>
+                </div>
+                <div class='panel-footer' style='background-color:bisque'>
+                        <p>發佈時間:{{post.pub_date | date:"Y M d,h:m:s"}}</p>
+                </div>
+        </div>
 {% endfor %}
 {% endblock %}
         

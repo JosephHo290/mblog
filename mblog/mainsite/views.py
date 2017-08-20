@@ -23,6 +23,7 @@ def showpost(request,slug):
     template = get_template('post.html')
     #now = datetime.now()
     #hoho = request
+    hoho = slug
     try:
         post = Post.objects.get(slug=slug)
         if post != None:
