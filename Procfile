@@ -1,1 +1,1 @@
-web: gunicorn mblog/mblog.wsgi --log-file -
+web: python 'mblog/manage.py' runserver 0.0.0.0:$PORT
